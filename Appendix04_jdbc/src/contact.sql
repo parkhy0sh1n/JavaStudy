@@ -11,3 +11,6 @@ alter table  contact_tbl add constraint pk_contact primary key(contact_no);
 
 drop sequence contact_seq;
 create sequence contact_seq nocache;
+
+SELECT CONTACT_NO, NAME, TEL, EMAIL, ADDRESS
+  FROM CONTACT_TBL;
