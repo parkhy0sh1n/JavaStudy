@@ -95,4 +95,23 @@ public class ContactServiceImpl implements ContactService {
 		int modifyResult = dao.updateContact(contact);
 		System.out.println(modifyResult + "개의 연락처가 수정되었습니다.");
 	}
+	
+	@Override
+	public void findContactsByName() {
+		
+		System.out.println("===== 연락처 조회하기 =====");
+		System.out.println("조회할 연락처 이름 >>> ");
+		String name = sc.next();
+		List<ContactDTO> contactList = dao.selectContactsByName(name);
+		for(ContactDTO contact : contactList) {
+			System.out.println(contact);
+		}
+	}
+	@Override
+	public void findAllContacts() {
+		System.out.println("===== 전체 연락처 목록 =====");
+		for(ContactDTO contact : dao.selectAllContacts()) {
+			System.out.println(contact);
+		}
+	}
 }
