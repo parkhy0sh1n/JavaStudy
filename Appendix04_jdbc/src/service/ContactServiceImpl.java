@@ -6,6 +6,8 @@ import java.util.Scanner;
 import dao.ContactDAO;
 import dto.ContactDTO;
 
+// extends : 클래스 상속(오버라이딩 x)
+// implments : 인터페이스 상속(오버라이딩 o)
 public class ContactServiceImpl implements ContactService {
 
 	/********** 1. field **********/
@@ -21,7 +23,6 @@ public class ContactServiceImpl implements ContactService {
 	/********** 3. method **********/
 	@Override
 	public void addContact() {
-		
 		System.out.println("====== 연락처 추가하기 ======");
 		System.out.print("신규 연락처 이름 >>> ");
 		String name = sc.next();
@@ -98,7 +99,6 @@ public class ContactServiceImpl implements ContactService {
 	
 	@Override
 	public void findContactsByName() {
-		
 		System.out.println("===== 연락처 조회하기 =====");
 		System.out.println("조회할 연락처 이름 >>> ");
 		String name = sc.next();

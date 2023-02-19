@@ -28,13 +28,13 @@ public class MemberTableMainClass {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		/* 2. 쿼리문 작성 및실행 */
+		/* 2. 쿼리문 작성 및 실행 */
 		/*
 			PreparedStatement 인터페이스
 			1. Prepared  : 미리 준비하시오.
 			2. Statement : 쿼리문을
 			3. 작성된 쿼리문을 전달하면 해당 쿼리문을 실행해 주는 역할을 수행한다.
-			4. State
+			4. Statement 인터페이스는 보안 문제로 사용하지 않는 것이 좋다.
 	   */
 		// 주의! jdbc에서는 쿼리문의 마지막에 세미콜론(;)을 붙이지 않는다.
 		StringBuilder sb = new StringBuilder();
@@ -51,6 +51,7 @@ public class MemberTableMainClass {
 			// PreparedStatement 객체 생성
 			ps = con.prepareStatement(sql);
 			// 쿼리문 실행하기
+			// boolean 타입이다.
 			ps.execute();
 			System.out.println("쿼리문이 실행되었습니다.");
 		} catch(Exception e) {
@@ -63,7 +64,5 @@ public class MemberTableMainClass {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		
 	}
-
 }

@@ -10,8 +10,10 @@ import java.util.Properties;
 public class MemberSeqMainClass {
 
 	public static void main(String[] args) {
+		
 		Connection con = null;
 		PreparedStatement ps = null;
+		
 		try {
 			Class.forName("oracle.jdbc.OracleDriver");
 			Properties p = new Properties();
@@ -23,24 +25,19 @@ public class MemberSeqMainClass {
 			String sql = "CREATE SEQUENCE MEMBER_SEQ NOCACHE";
 			ps = con.prepareStatement(sql);
 			if (ps.execute()) {
-				System.out.println("MEMBER_SEQ 생성 실패.");
-			} else {
 				System.out.println("MEMBER_SEQ 생성 성공.");
+			} else {
+				System.out.println("MEMBER_SEQ 생성 실패.");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			try {
-				if (ps != null)
-					ps.close();
-				if (con != null)
-					con.close();
+				if (ps != null) ps.close();
+				if (con != null) con.close();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-
 		}
-
 	}
-
 }

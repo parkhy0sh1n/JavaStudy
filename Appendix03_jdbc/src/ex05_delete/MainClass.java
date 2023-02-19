@@ -10,9 +10,10 @@ import java.util.Properties;
 public class MainClass {
 
 	public static void main(String[] args) {
-		// id가 admin인 회원이 작성한 게시들의 title 앞에 [new]를 추가하시오.
+		
 		Connection con = null;
 		PreparedStatement ps = null;
+		
 		try {
 			Class.forName("oracle.jdbc.OracleDriver");
 			Properties p = new Properties();
@@ -20,7 +21,7 @@ public class MainClass {
 			String url = "jdbc:oracle:thin:@localhost:1521:xe";
 			con = DriverManager.getConnection(url, p);
 			// 회원번호가 1인 회원을 삭제하시오.
-			String sql = "delete from member_tbl where member_no = ?";
+			String sql = "DELETE FROM MEMBER_TBL WHERE MEMBER_NO = ?";
 			ps = con.prepareStatement(sql);
 			int memberNo = 1;
 			ps.setInt(1, memberNo);
