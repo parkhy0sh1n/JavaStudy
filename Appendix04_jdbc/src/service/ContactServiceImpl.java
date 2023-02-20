@@ -9,7 +9,7 @@ import dto.ContactDTO;
 // extends : 클래스 상속(오버라이딩 x)
 // implments : 인터페이스 상속(오버라이딩 o)
 public class ContactServiceImpl implements ContactService {
-
+ 
 	/********** 1. field **********/
 	private Scanner sc;
 	private ContactDAO dao;
@@ -19,7 +19,7 @@ public class ContactServiceImpl implements ContactService {
 		sc = new Scanner(System.in);
 		dao = ContactDAO.getInstance();
 	}
-	
+	 
 	/********** 3. method **********/
 	@Override
 	public void addContact() {
